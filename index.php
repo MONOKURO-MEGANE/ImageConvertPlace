@@ -128,14 +128,17 @@ if(!isset($judge_cookie)) {
 		});
 	</script>
 	<!-- google reCAPTCHAR -->
-	<script src="https://www.google.com/recaptcha/api.js?render=6LdQ-3AaAAAAABo7MJ8THi6zS79BQJx0Mc5wSYC4"></script>
+	<script src="javascript/_recaptcha_keys.js">
+		/**let key = V3_SITEKEY;**/
+	</script>
+	<script>document.write(`<script src="${address}"><\/script>`);</script>
 	<script>
 		$(document).ready(function() {
 			$('#file-upload-form').submit(function(event) {
 				event.preventDefault();
 				//トークンを取得
 				grecaptcha.ready(function() {
-					grecaptcha.execute('6LdQ-3AaAAAAABo7MJ8THi6zS79BQJx0Mc5wSYC4', {action: 'POST_IMAGE'}).then(function(token) {
+					grecaptcha.execute(document.write(`${key}`), {action: 'POST_IMAGE'}).then(function(token) {
 						//input 要素を生成して値にトークンを設定
 						$('#file-upload-form').prepend('<input type="hidden" name="g-recaptcha-response" value="' + token + '">');
 						//input 要素を生成して値にアクション名を設定
