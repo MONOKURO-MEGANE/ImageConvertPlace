@@ -117,14 +117,16 @@ EOM;
 	<script src="https://kit.fontawesome.com/d48fe24770.js" crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<!-- google reCAPTCHAR -->
-	<script src="https://www.google.com/recaptcha/api.js?render=6LdQ-3AaAAAAABo7MJ8THi6zS79BQJx0Mc5wSYC4"></script>
+	<script src="javascript/_recaptcha_keys.js">
+		document.write(`<script src="${address}"><\/script>`);
+	</script>
 	<script>
 		$(document).ready(function() {
 			$('#contact-form').submit(function(event) {
 				event.preventDefault();
 				//トークンを取得
 				grecaptcha.ready(function() {
-					grecaptcha.execute('6LdQ-3AaAAAAABo7MJ8THi6zS79BQJx0Mc5wSYC4', {action: 'POST_CONTACT'}).then(function(token) {
+					grecaptcha.execute(document.write(`${key}`), {action: 'POST_CONTACT'}).then(function(token) {
 						//input 要素を生成して値にトークンを設定
 						$('#contact-form').prepend('<input type="hidden" name="g-recaptcha-response" value="' + token + '">');
 						//input 要素を生成して値にアクション名を設定

@@ -115,23 +115,10 @@ if(!isset($judge_cookie)) {
 	<script src="https://kit.fontawesome.com/d48fe24770.js" crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script src="javascript/upload_file_master.js"></script>
-	<script>
-		$(document).ready(function() {
-			$('.show-image-button > .button-list > .button-item > label.green-button').on('click', function() {
-				$(this).parents().find('div#png-text-wrapper').slideUp();
-				$(this).parents().find('div#jpg-text-wrapper').slideToggle();
-			});
-			$('.show-image-button > .button-list > .button-item > label.blue-button').on('click', function() {
-				$(this).parents().find('div#jpg-text-wrapper').slideUp();
-				$(this).parents().find('div#png-text-wrapper').slideToggle();
-			});
-		});
-	</script>
 	<!-- google reCAPTCHAR -->
 	<script src="javascript/_recaptcha_keys.js">
-		/**let key = V3_SITEKEY;**/
+		document.write(`<script src="${address}"><\/script>`);
 	</script>
-	<script>document.write(`<script src="${address}"><\/script>`);</script>
 	<script>
 		$(document).ready(function() {
 			$('#file-upload-form').submit(function(event) {
@@ -151,6 +138,18 @@ if(!isset($judge_cookie)) {
 		});
 	</script>
 	<!-- /google reCAPTCHAR -->
+	<script>
+		$(document).ready(function() {
+			$('.show-image-button > .button-list > .button-item > label.green-button').on('click', function() {
+				$(this).parents().find('div#png-text-wrapper').slideUp();
+				$(this).parents().find('div#jpg-text-wrapper').slideToggle();
+			});
+			$('.show-image-button > .button-list > .button-item > label.blue-button').on('click', function() {
+				$(this).parents().find('div#jpg-text-wrapper').slideUp();
+				$(this).parents().find('div#png-text-wrapper').slideToggle();
+			});
+		});
+	</script>
 </head>
 <body>
 	<header>
