@@ -117,7 +117,8 @@ EOM;
 	<script src="https://kit.fontawesome.com/d48fe24770.js" crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<!-- google reCAPTCHAR -->
-	<script src="javascript/_recaptcha_keys.js">
+	<script src="javascript/_recaptcha_keys.js"></script>
+	<script>
 		document.write(`<script src="${address}"><\/script>`);
 	</script>
 	<script>
