@@ -119,7 +119,7 @@ EOM;
 	<!-- google reCAPTCHAR -->
 	<script src="javascript/_recaptcha_keys.js"></script>
 	<script>
-		document.write(`<script src="${address}"><\/script>`);
+		document.write(`<script src="${RECAPTCHA_API_URL}"><\/script>`);
 	</script>
 	<script>
 		$(document).ready(function() {
@@ -127,7 +127,7 @@ EOM;
 				event.preventDefault();
 				//トークンを取得
 				grecaptcha.ready(function() {
-					grecaptcha.execute(document.write(`${key}`), {action: 'POST_CONTACT'}).then(function(token) {
+					grecaptcha.execute(RECAPTHCA_SITEKEY, {action: 'POST_CONTACT'}).then(function(token) {
 						//input 要素を生成して値にトークンを設定
 						$('#contact-form').prepend('<input type="hidden" name="g-recaptcha-response" value="' + token + '">');
 						//input 要素を生成して値にアクション名を設定
