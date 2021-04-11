@@ -3,6 +3,8 @@
 //error_reporting(E_ALL);
 
 
+setlocale(LC_CTYPE, 'ja_JP.UTF-8');					// basename(),pathinfo()の日本語対応のため
+
 require_once '_recaptcha_keys.php';
 $siteKey = V3_SITEKEY;			// reCAPTCHA サイトキー
 $secretKey = V3_SECRETKEY;	// reCAPTCHA シークレットキー

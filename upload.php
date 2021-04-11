@@ -3,6 +3,8 @@
 //error_reporting(E_ALL);
 
 
+setlocale(LC_CTYPE, 'ja_JP.UTF-8');					// basename(),pathinfo()の日本語対応のため
+
 ini_set('file_uploads', 'On');
 ini_set('max_file_uploads', '5');						// 一度にアップロード出来るファイル数
 ini_set('memory_limit', '128M');						// 一回の実行で使う最大のメモリサイズ
