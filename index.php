@@ -116,7 +116,7 @@ if(!isset($judge_cookie)) {
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="javascript/upload_file_master.js"></script>
   <!-- google reCAPTCHAR -->
-  <script src="javascript/_recaptcha_keys.js"></script>
+  <script src="javascript/recaptcha_keys.js"></script>
   <script>
     let key = getSitekey();
     RECAPTHCA_SITEKEY = key;

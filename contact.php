@@ -119,7 +119,7 @@ EOM;
   <script src="https://kit.fontawesome.com/d48fe24770.js" crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <!-- google reCAPTCHAR -->
-  <script src="javascript/_recaptcha_keys.js"></script>
+  <script src="javascript/recaptcha_keys.js"></script>
   <script>
     let key = getSitekey();
     RECAPTHCA_SITEKEY = key;
