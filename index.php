@@ -100,7 +100,7 @@ if(!isset($judge_cookie)) {
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,maximum-scale=1">
-  <title>画像変換所 - Image Convert Place</title>
+  <title>画像変換所 (Image Convert Place) | JPG画像とPNG画像の双方向変換プログラム</title>
   <meta name="description" content="JPG画像ファイルとPNG画像ファイルを相互変換するプログラムです！アップロードするファイルはドラッグ・アンド・ドロップで選択できます！">
   <meta name="keywords" content="">
   <meta http-equiv="Pragma" content="no-cache">
@@ -128,7 +128,6 @@ if(!isset($judge_cookie)) {
     $(document).ready(function() {
       $('#file-upload-form').submit(function(event) {
         event.preventDefault();
-        //トークンを取得
         grecaptcha.ready(function() {
           grecaptcha.execute(RECAPTHCA_SITEKEY, {action: 'POST_IMAGE'}).then(function(token) {
             //input 要素を生成して値にトークンを設定
@@ -220,6 +219,8 @@ if(!isset($judge_cookie)) {
           <li class="notice-area">
             <p class="error-title">内容</p>
             <?php
+              echo htmlspecialchars( isset($_COOKIE['error_notice']) ? $_COOKIE['error_notice'] : "問題ありません" );
+              /*
               $catch_cookie = 0;
               if(isset($_COOKIE['error_notice'])) {
                 $catch_cookie = $_COOKIE['error_notice'];
@@ -227,6 +228,7 @@ if(!isset($judge_cookie)) {
                 $catch_cookie = "問題ありません";
               }
               echo htmlspecialchars("$catch_cookie");
+              */
             ?>
           </li>
         </ul>

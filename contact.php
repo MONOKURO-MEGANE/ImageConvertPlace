@@ -98,7 +98,7 @@ EOM;
   </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,maximum-scale=1">
-  <title>お問い合わせ - Image Convert Place</title>
+  <title>お問い合わせ - 画像変換所 (Image Convert Place)</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
   <meta http-equiv="Pragma" content="no-cache">
