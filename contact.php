@@ -58,10 +58,10 @@ header('X-FRAME-OPTIONS: SAMEORIGIN');
 if ( ($_SERVER['REQUEST_METHOD'] === 'POST') && ($_POST[$sess_name] === $_SESSION[$sess_name]) ) {
   $ADMIN_MAIL = MY_MAIL_ADDRESS;
 
-  $name = htmlspecialchars($_POST['name']);
-  $address = htmlspecialchars($_POST['address']);
-  $subject = htmlspecialchars($_POST['subject']);
-  $message = htmlspecialchars($_POST['message']);
+  $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_SPECIAL_CHARS);
+  $address = filter_input(INPUT_POST, 'address', FILTER_SANITIZE_SPECIAL_CHARS);
+  $subject = filter_input(INPUT_POST, 'subject', FILTER_SANITIZE_SPECIAL_CHARS);
+  $message = filter_input(INPUT_POST, 'message', FILTER_SANITIZE_SPECIAL_CHARS);
 
   $message_detail = <<< EOM
 送信内容は以下のとおりです。
@@ -131,7 +131,6 @@ EOM;
     $(document).ready(function() {
       $('#contact-form').submit(function(event) {
         event.preventDefault();
-        //トークンを取得
         grecaptcha.ready(function() {
           grecaptcha.execute(RECAPTHCA_SITEKEY, {action: 'POST_CONTACT'}).then(function(token) {
             //input 要素を生成して値にトークンを設定

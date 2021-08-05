@@ -51,9 +51,10 @@ ini_set('session.gc_maxlifetime', '1800');
 ini_set('session.gc_probability', '1');
 ini_set('session.gc_divisor', '100');
 session_start();
+session_regenerate_id();
 $sess_name = session_name();
 $sess_id = session_id();
-$_SESSION[$sess_name] = $sess_id;
+//$_SESSION[$sess_name] = $sess_id;
 
 // 他のサイトでインラインフレーム表示を禁止する（クリックジャッキング対策）
 header('X-FRAME-OPTIONS: SAMEORIGIN');
@@ -66,8 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
 // uploadするディレクトリ
 $upload_dir = './upload/';
 // クッキーで変換結果を判断
-$judge_cookie = isset($_COOKIE['conversion']) ? $_COOKIE['conversion'] : NULL;
-
+$judge_cookie = filter_input(INPUT_COOKIE, 'conversion', FILTER_SANITIZE_SPECIAL_CHARS);
 if(!isset($judge_cookie)) {
   //$sess_name = bin2hex(random_bytes(10));
   setcookie('conversion', 'prepare', 0, '/');
@@ -76,7 +76,7 @@ if(!isset($judge_cookie)) {
   $queries = $_SERVER['QUERY_STRING'];
   parse_str($queries, $query_ary);
   //$_SESSION = array();
-  setcookie('conversion', '', 0, '/');
+  setcookie('conversion', '', time() - 1, '/');
   session_unset();
   session_destroy();
 }
@@ -219,16 +219,8 @@ if(!isset($judge_cookie)) {
           <li class="notice-area">
             <p class="error-title">内容</p>
             <?php
-              echo htmlspecialchars( isset($_COOKIE['error_notice']) ? $_COOKIE['error_notice'] : "問題ありません" );
-              /*
-              $catch_cookie = 0;
-              if(isset($_COOKIE['error_notice'])) {
-                $catch_cookie = $_COOKIE['error_notice'];
-              } else {
-                $catch_cookie = "問題ありません";
-              }
-              echo htmlspecialchars("$catch_cookie");
-              */
+              $catch_cookie = filter_input(INPUT_COOKIE, 'error_notice', FILTER_SANITIZE_SPECIAL_CHARS);
+              echo $catch_cookie;
             ?>
           </li>
         </ul>

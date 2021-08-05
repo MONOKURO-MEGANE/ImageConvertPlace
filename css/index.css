@@ -69,12 +69,13 @@ input[type="submit"]:active {
   margin-left: 0;
   padding: 0 10px 20px;
   width: 55%;
-  height: auto;
+  height: 25vh;
 
   background-color: #ceff91;
 }
 
 .returned-wrapper .confirm-result-box .download-area .result-title {
+  margin: 3% auto;
   text-align: center;
   color: #506339;
   font-size: 1.6em;
@@ -87,12 +88,13 @@ input[type="submit"]:active {
   margin-right: 0;
   padding: 0 10px 20px;
   width: 35%;
-  height: auto;
+  height: 25vh;
 
   background-color: #ff91a0;
 }
 
 .returned-wrapper .confirm-result-box .notice-area .error-title {
+  margin: 3% auto;
   text-align: center;
   color: #4f2e32;
   font-size: 1.6em;
