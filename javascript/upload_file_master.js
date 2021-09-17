@@ -3,7 +3,7 @@ $(document).ready(function(){
   $("#file_drag_drop_area").on('dragover', function(event){
     event.preventDefault();
     event.stopPropagation();
-    $(this).css('background-color', '#999999');
+    $(this).css('background-color', '#99ff33');
   });
   $("#file_drag_drop_area").on('dragleave', function(event){
     event.preventDefault();
@@ -18,6 +18,7 @@ $(document).ready(function(){
     }
 
     original_event.preventDefault();
+    //file_input.files = original_event.dataTransfer.files;
     file_input.files = original_event.dataTransfer.files;
     $(this).css('background-color', 'transparent');
   });

@@ -45,9 +45,10 @@ ini_set('session.gc_maxlifetime', '1800');
 ini_set('session.gc_probability', '1');
 ini_set('session.gc_divisor', '100');
 session_start();
+session_regenerate_id(true);
 $sess_name = session_name();
 $sess_id = session_id();
-$_SESSION[$sess_name] = $sess_id;
+//$_SESSION[$sess_name] = $sess_id;
 
 require_once '_mail_address.php';
 
