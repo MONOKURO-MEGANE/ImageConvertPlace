@@ -58,6 +58,7 @@ h2.site-title a:visited {
 .top-bar {
 	background-color: #e4ffb5;
 	margin: 0;
+	padding: 5px 10px;
 }
 
 .top-bar h1.description {
