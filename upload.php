@@ -5,23 +5,8 @@
 
 setlocale(LC_CTYPE, 'ja_JP.UTF-8');         // basename(),pathinfo()の日本語対応のため
 
-ini_set('file_uploads', 'On');
-ini_set('max_file_uploads', '5');           // 一度にアップロード出来るファイル数
-ini_set('memory_limit', '128M');            // 一回の実行で使う最大のメモリサイズ
-ini_set('post_max_size', '512M');           // 送信できるPOSTデータのサイズ
-ini_set('upload_max_filesize', '512M');     // アップロードできる合計ファイルサイズ
-
-//ini_set('session.use_only_cookies', '0');
-ini_set('session.use_trans_sid', '1');
-//ini_set('session.save_path', './tmp/session');
-ini_set('session.gc_maxlifetime', '1800');
-ini_set('session.gc_probability', '1');
-ini_set('session.gc_divisor', '100');
-session_start();
-session_regenerate_id(true);
-$sess_name = session_name();
-$sess_id = session_id();
-//$_SESSION[$sess_name] = $sess_id;
+require_once '_upload_env.php';
+require_once '_session_cookie_env.php';
 
 // 他のサイトでインラインフレーム表示を禁止する（クリックジャッキング対策）
 header('X-FRAME-OPTIONS: SAMEORIGIN');
