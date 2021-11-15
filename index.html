@@ -44,7 +44,7 @@ ini_set('memory_limit', '128M');            // 一回の実行で使う最大の
 ini_set('post_max_size', '512M');           // 送信できるPOSTデータのサイズ
 ini_set('upload_max_filesize', '512M');     // アップロードできる合計ファイルサイズ
 
-ini_set('session.use_only_cookies', '0');
+//ini_set('session.use_only_cookies', '0');
 ini_set('session.use_trans_sid', '1');
 //ini_set('session.save_path', './tmp/session');
 ini_set('session.gc_maxlifetime', '1800');
@@ -145,12 +145,12 @@ if(!isset($judge_cookie)) {
   <script>
     $(document).ready(function() {
       $('.show-image-button > .button-list > .button-item > label.green-button').on('click', function() {
-        $(this).parents().find('div#png-text-wrapper').slideUp();
-        $(this).parents().find('div#jpg-text-wrapper').slideToggle();
+        $(this).parents().find('div#png-text-wrapper').hide();
+        $(this).parents().find('div#jpg-text-wrapper').fadeIn(1000);
       });
       $('.show-image-button > .button-list > .button-item > label.blue-button').on('click', function() {
-        $(this).parents().find('div#jpg-text-wrapper').slideUp();
-        $(this).parents().find('div#png-text-wrapper').slideToggle();
+        $(this).parents().find('div#jpg-text-wrapper').hide();
+        $(this).parents().find('div#png-text-wrapper').fadeIn(1000);
       });
     });
   </script>
@@ -280,11 +280,16 @@ if(!isset($judge_cookie)) {
             <li class="blog-item"><a href="https://hikki-reserve.com/wordpress/" target="_blank">ヒッキー予備軍のブログ</a></li>
           </ul>
         </li>
-        <li class="page-contents"><a href="contact.php">お問い合わせフォーム</a></li>
+        <li class="page-contents-item">
+          <ul class="page-list">
+            <li class="page-item"><a href="index.html">トップページ</a></li>
+            <li class="page-item"><a href="contact.html">お問い合わせフォーム</a></li>
+          </ul>
+        </li>
       </ul>
     </div>
     <div class="copyright-area">
-      <p class="copyright-text">&copy; COPYRIGHT <?php echo date("Y"); ?> MONOKURO-MEGANE All Right Reserved.</p>
+      <p class="copyright-text">&copy; <?php echo date("Y"); ?> MONOKURO-MEGANE All Right Reserved.</p>
     </div>
   </footer>
 </body>

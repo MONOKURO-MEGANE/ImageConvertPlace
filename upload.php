@@ -11,7 +11,7 @@ ini_set('memory_limit', '128M');            // 一回の実行で使う最大の
 ini_set('post_max_size', '512M');           // 送信できるPOSTデータのサイズ
 ini_set('upload_max_filesize', '512M');     // アップロードできる合計ファイルサイズ
 
-ini_set('session.use_only_cookies', '0');
+//ini_set('session.use_only_cookies', '0');
 ini_set('session.use_trans_sid', '1');
 //ini_set('session.save_path', './tmp/session');
 ini_set('session.gc_maxlifetime', '1800');
@@ -41,7 +41,7 @@ $PROTOCOL = $_SERVER['REQUEST_SCHEME'];
 $SERVER_HOST = $_SERVER['HTTP_HOST'];
 $SERVER_DOMAIN = "$PROTOCOL".'://'."$SERVER_HOST";
 
-$top_page_file = 'index.php';
+$top_page_file = 'index.html';
 // uploadするディレクトリ
 $upload_dir = './upload/';
 // uploadするファイルリスト
