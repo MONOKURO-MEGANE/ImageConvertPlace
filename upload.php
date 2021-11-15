@@ -5,8 +5,8 @@
 
 setlocale(LC_CTYPE, 'ja_JP.UTF-8');         // basename(),pathinfo()の日本語対応のため
 
-require_once '_upload_env.php';
-require_once '_session_cookie_env.php';
+require_once './_upload_env.php';
+require_once './_session_cookie_env.php';
 
 // 他のサイトでインラインフレーム表示を禁止する（クリックジャッキング対策）
 header('X-FRAME-OPTIONS: SAMEORIGIN');
