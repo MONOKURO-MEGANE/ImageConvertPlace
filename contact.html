@@ -39,7 +39,6 @@ if ($token && $action) {
 
 
 require_once './_session_cookie_env.php';
-
 require_once './_mail_address.php';
 
 // 他のサイトでインラインフレーム表示を禁止する（クリックジャッキング対策）
@@ -78,15 +77,17 @@ EOM;
 <html lang="ja">
 <head>
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WPEMD9F6ZT"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WPEMD9F6ZT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-    gtag('config', 'G-WPEMD9F6ZT');
-  </script>
+  gtag('config', 'G-WPEMD9F6ZT');
+</script>
+
+  <meta name="robots" content="noindex,nofollow,noarchive">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,maximum-scale=1">
   <title>お問い合わせ - 画像変換所 (Image Convert Place)</title>
