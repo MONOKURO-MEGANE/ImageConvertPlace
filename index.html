@@ -88,6 +88,15 @@ if(!isset($judge_cookie)) {
 
     gtag('config', 'G-WPEMD9F6ZT');
   </script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MBQMWC2');</script>
+<!-- End Google Tag Manager -->
+
   <!-- Google AdSense -->
   <!--<script data-ad-client="ca-pub-3312767436740276" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>-->
 
@@ -107,6 +116,13 @@ if(!isset($judge_cookie)) {
   <link rel="stylesheet" href="css/index.css">
   <script src="https://kit.fontawesome.com/d48fe24770.js" crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <!-- barba.js Ver2 (CDN) -->
+  <script src="https://unpkg.com/@barba/core"></script>
+  <script>
+    barba.init({
+
+    });
+  </script>
   <script src="javascript/upload_file_master.js"></script>
   <!-- google reCAPTCHAR -->
   <script src="javascript/recaptcha_keys.js"></script>
@@ -150,6 +166,11 @@ if(!isset($judge_cookie)) {
 </head>
 <body>
 
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MBQMWC2"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
 <div id="read_text" style="display:none;"></div>
 
   <header>
@@ -160,6 +181,8 @@ if(!isset($judge_cookie)) {
     <nav></nav>
   </header>
   <article>
+  <div data-barba="wrapper">
+  <div data-barba="container" data-barba-namespace="png,jpg-for-two-way">
     <section>
       <p class="summary-message">JPGファイルとPNGファイルを同時にアップロードしても大丈夫。</p>
       <form id="file-upload-form" action="./upload.php" method="POST" enctype="multipart/form-data">
@@ -263,13 +286,15 @@ if(!isset($judge_cookie)) {
         </div>
       </div>
     </section>
+  </div>
+  </div>
   </article>
   <footer>
     <div class="link-area">
       <ul class="link-type-list">
         <li class="link-type-item">
           <ul class="blog-list">
-            <li class="blog-item"><a href="https://pcgame-a2z.com/wordpress/" target="_blank">PCゲームのＡtoＺのブログ</a></li>
+            <li class="blog-item"><a href="https://pcgame-a2z.com/wordpress/" target="_blank">PCゲームのAtoZのブログ</a></li>
             <li class="blog-item"><a href="https://hikki-reserve.com/wordpress/" target="_blank">ヒッキー予備軍のブログ</a></li>
           </ul>
         </li>

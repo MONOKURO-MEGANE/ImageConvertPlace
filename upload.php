@@ -79,16 +79,16 @@ setcookie('error_notice', '', 0, '/');
 
 // 画像変換プログラム
 foreach($upload_file_ary as $valid_file) {
-  $no_extention_path = pathinfo($valid_file, PATHINFO_FILENAME);
+  $no_extension_path = pathinfo($valid_file, PATHINFO_FILENAME);
   $image_type = mime_content_type("$upload_dir"."$valid_file");
   if($image_type === 'image/jpeg') {
     $converted_file = imagecreatefromjpeg("$upload_dir"."$valid_file");
-    @imagepng($converted_file, "$upload_dir"."$no_extention_path".'.png');
+    @imagepng($converted_file, "$upload_dir"."$no_extension_path".'.png');
     imagedestroy($converted_file);
   }
   if($image_type === 'image/png') {
     $converted_file = imagecreatefrompng("$upload_dir"."$valid_file");
-    @imagejpeg($converted_file, "$upload_dir"."$no_extention_path".'.jpg');
+    @imagejpeg($converted_file, "$upload_dir"."$no_extension_path".'.jpg');
     imagedestroy($converted_file);
   }
 }
@@ -98,8 +98,8 @@ $DIR_PATH = dirname($_SERVER['SCRIPT_NAME']);
 // ここからクエリパラメータ
 $file_list = implode('+', $upload_file_ary);
 
-$respons_address = "$SERVER_DOMAIN"."$DIR_PATH"."$top_page_file".'?imagefiles='."$file_list";
+$response_address = "$SERVER_DOMAIN"."$DIR_PATH"."$top_page_file".'?imagefiles='."$file_list";
 
-header("Location: "."$respons_address");
+header("Location: "."$response_address");
 exit();
 
