@@ -1,4 +1,4 @@
 User-agent: *
-Disallow: upload/
-Disallow: _recaptcha_keys.txt
+Disallow: /upload/
+Disallow: /_recaptcha_keys.txt
 Sitemap: https://image-convert-place.net/sitemap.xml
