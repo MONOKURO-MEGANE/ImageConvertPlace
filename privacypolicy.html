@@ -1,0 +1,200 @@
+<?php
+//ini_set("display_errors", "On");
+//error_reporting(E_ALL);
+
+
+setlocale(LC_CTYPE, 'ja_JP.UTF-8');         // basename(),pathinfo()の日本語対応のため
+
+require_once './_recaptcha_keys.php';
+$siteKey = V3_SITEKEY;                      // reCAPTCHA サイトキー
+$secretKey = V3_SECRETKEY;                  // reCAPTCHA シークレットキー
+
+require_once './recaptcha-master/src/autoload.php';       /* google reCAPTCHAR */
+
+//reCAPTCHA トークン
+$token = isset( $_POST[ 'g-recaptcha-response' ] ) ? $_POST[ 'g-recaptcha-response' ] : NULL;
+//reCAPTCHA アクション名
+$action = isset( $_POST[ 'action' ] ) ? $_POST[ 'action' ] : NULL;
+// 結果を表示する文字列を初期化
+$result_status = '';
+
+// トークンとアクション名が取得できれば
+if ($token && $action) {
+  //インスタンスを生成
+  $recaptcha = new \ReCaptcha\ReCaptcha($secretKey);
+  $resp = $recaptcha->setExpectedHostname($_SERVER['SERVER_NAME']) //ホスト名の確認
+                    ->setExpectedAction($action) //アクション名の確認
+                    ->setScoreThreshold(0.5) //スコアの閾値の設定（この場合 0.5 以上）
+                    ->verify($token, $_SERVER['REMOTE_ADDR']);
+
+  if ( $resp->isSuccess() ) {
+    // 検証を通過した場合の処理（メールの送信など）
+    $result_status = 'Verified（検証通過）!';
+  } else {
+    // 検証を通過しなかった場合の処理（エラーの表示など）
+    $errors = $resp->getErrorCodes();
+    $result_status = 'Failed（失敗） ';
+  }
+}
+
+
+require_once './_session_cookie_env.php';
+require_once './_mail_address.php';
+
+// 他のサイトでインラインフレーム表示を禁止する（クリックジャッキング対策）
+header('X-FRAME-OPTIONS: SAMEORIGIN');
+
+?>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WPEMD9F6ZT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-WPEMD9F6ZT');
+  </script>
+
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "clgfu8uxob");
+  </script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MBQMWC2');</script>
+<!-- End Google Tag Manager -->
+
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,maximum-scale=1">
+  <title>お問い合わせ - 画像変換所 (Image Convert Place)</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Cache-Control" content="no-cache">
+  <link rel="canonical" href="https://image-convert-place.net/">
+  <link rel="stylesheet" href="css/_normalize_.css">
+  <link rel="stylesheet" href="css/_clearfix_.css">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/privacypolicy.css">
+  <script src="https://kit.fontawesome.com/d48fe24770.js" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <!-- google reCAPTCHAR -->
+  <script src="javascript/recaptcha_keys.js"></script>
+  <script>
+    let key = getSitekey();
+    RECAPTHCA_SITEKEY = key;
+    RECAPTCHA_API_URL = 'https://www.google.com/recaptcha/api.js?render=' + key;
+
+    document.write(`<script src="${RECAPTCHA_API_URL}"><\/script>`);
+  </script>
+  <script>
+    $(document).ready(function() {
+      $('#contact-form').submit(function(event) {
+        event.preventDefault();
+        grecaptcha.ready(function() {
+          grecaptcha.execute(RECAPTHCA_SITEKEY, {action: 'POST_CONTACT'}).then(function(token) {
+            //input 要素を生成して値にトークンを設定
+            $('#contact-form').prepend('<input type="hidden" name="g-recaptcha-response" value="' + token + '">');
+            //input 要素を生成して値にアクション名を設定
+            $('#contact-form').prepend('<input type="hidden" name="action" value="POST_CONTACT">');
+            //unbind で一度 submit のイベントハンドラを削除してから submit() を実行
+            $('#contact-form').unbind('submit').submit();
+          });
+        });
+      });
+    });
+  </script>
+  <!-- /google reCAPTCHAR -->
+</head>
+<body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MBQMWC2" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+    <header>
+    <div class="top-bar">
+      <h1 class="description">画像変換所"Image Convert Place"は、JPGファイルもしくはPNGファイルを相互に変換できるサイトです。</h1>
+    </div>
+    <h2 class="site-title"><a href="/"><span data-ruby="Image Convert Place">画像変換所</span></a></h2>
+    <nav></nav>
+  </header>
+  <article>
+    <section>
+      <h3 class="contact-title">プライバシーポリシー</h3>
+      <div class="attention-wrapper">
+        <ul class="attention-list">
+          <li class="attention-item">確認画面はございませんので、入力の間違いがないようにお願いします。</li>
+          <li class="attention-item">送信すると、入力されたメールアドレスにメールが送信されます。</li>
+          <li class="attention-item">すべての項目が必須項目となっています。</li>
+        </ul>
+      </div>
+      <div class="form-wrapper">
+        <form id="contact-form" action="contact.php" method="POST">
+          <input type="hidden" name="<?php echo $sess_name; ?>" value="<?php echo $sess_id; ?>">
+          <div class="input-block">
+            <ul class="contact-list">
+              <li class="contact-key"><label>お名前</label></li>
+              <li class="contact-value"><input type="text" name="name" size="20" maxlength="30" required></li>
+            </ul>
+            <ul class="contact-list">
+              <li class="contact-key"><label>メールアドレス</label></li>
+              <li class="contact-value"><input type="email" name="address" size="30" maxlength="50" required></li>
+            </ul>
+            <ul class="contact-list">
+              <li class="contact-key"><label>件名</label></li>
+              <li class="contact-value"><input type="text" name="subject" size="30" maxlength="50" required></li>
+            </ul>
+            <ul class="contact-list">
+              <li class="contact-key"><label>メッセージ</label></li>
+              <li class="contact-value"><textarea name="message" rows="6" cols="50" maxlength="400" required></textarea></li>
+            </ul>
+          </div>
+          <div style="text-align:center;">
+            <input id="send-button" type="submit" value="送信">
+            <input type="hidden" name="recaptcha_response" id="TOKEN">
+            <input type="hidden" name="action" value="POST_CONTACT">
+          </div>
+        </form>
+      </div>
+    </section>
+  </article>
+  <footer>
+    <div class="link-area">
+      <ul class="link-type-list">
+        <li class="link-type-item">
+          <ul class="blog-list">
+            <li class="blog-item"><a href="https://pcgame-a2z.com/wordpress/" target="_blank">PCゲームのAtoZのブログ</a></li>
+            <li class="blog-item"><a href="https://hikki-reserve.com/wordpress/" target="_blank">ヒッキー予備軍のブログ</a></li>
+          </ul>
+        </li>
+        <li class="page-contents-item">
+          <ul class="page-list">
+            <li class="page-item"><a href="index.html">トップページ</a></li>
+            <li class="page-item"><a href="contact.html">お問い合わせフォーム</a></li>
+            <li class="page-item"><a href="privacypolicy.html">プライバシーポリシー</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="copyright-area">
+      <p class="copyright-text">&copy; <?php echo date("Y"); ?> MONOKURO-MEGANE All Right Reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

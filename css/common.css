@@ -1,7 +1,10 @@
-@charset "UTF-8";
-
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
-
-  font-family: Osaka, "Meiryo UI", sans-serif;
+  font-family: "Font Awesome 5 Free", Osaka, "Meiryo UI", sans-sheif;
+  letter-spacing: 2px;
+  line-height: 1.2;
 }
+
+/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../stylesheet/scss/common.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAEA;AAAA;AAAA;EAGE;EACA;EACA;EACA%22,%22file%22:%22common.css%22%7D */

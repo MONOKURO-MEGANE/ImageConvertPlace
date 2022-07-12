@@ -1,0 +1,23 @@
+{
+  "name": "image_convert_place",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass --color --embed-source-map stylesheet/scss/:css/ --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MONOKURO-MEGANE/ImageConvertPlace.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MONOKURO-MEGANE/ImageConvertPlace/issues"
+  },
+  "homepage": "https://github.com/MONOKURO-MEGANE/ImageConvertPlace#readme",
+  "devDependencies": {
+    "sass": "^1.53.0"
+  }
+}
