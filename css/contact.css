@@ -63,9 +63,7 @@
     width: 80%;
     height: auto;
   }
-  #contact-form .input-block .contact-list .contact-value input[type=text],
-#contact-form .input-block .contact-list .contact-value input[type=email],
-#contact-form .input-block .contact-list .contact-value textarea {
+  #contact-form .input-block .contact-list .contact-value input[type=text], #contact-form .input-block .contact-list .contact-value input[type=email], #contact-form .input-block .contact-list .contact-value textarea {
     padding: 5px;
   }
   #contact-form div input[type=submit] {
@@ -88,7 +86,7 @@
     background: linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
     background-color: #ffab23;
   }
-  #contact-form div input[type=submit].active {
+  #contact-form div input[type=submit]:active {
     position: relative;
     top: 1px;
   }
@@ -155,9 +153,7 @@
     width: 100%;
     height: auto;
   }
-  #contact-form .input-block .contact-list .contact-value input[type=text],
-#contact-form .input-block .contact-list .contact-value input[type=email],
-#contact-form .input-block .contact-list .contact-value textarea {
+  #contact-form .input-block .contact-list .contact-value input[type=text], #contact-form .input-block .contact-list .contact-value input[type=email], #contact-form .input-block .contact-list .contact-value textarea {
     padding: 5px;
     width: 100%;
     height: auto;
@@ -182,10 +178,10 @@
     background: linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
     background-color: #ffab23;
   }
-  #contact-form div input[type=submit].active {
+  #contact-form div input[type=submit]:active {
     position: relative;
     top: 1px;
   }
 }
 
-/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../stylesheet/scss/contact.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22;AAEA;EAEA;IACE;IACA;IACA;IACA;IACA;IACA;;EAGF;IACE;IACA;IACA;IACA;;EAGF;IACE;IAEA;IACA;IACA;IACA;;EAGF;IACE;IAEA;IACA;;EAGF;IACE;IACA;IACA;IACA;;EAGF;IACE;IACA;;EAMF;IACE;IAEA;IACA;IACA;IACA;IACA;IAEA;IACA;IACA;;EAGF;IACE;IACA;IAEA;IACA;IACA;;EAGF;IACE;;EAGF;IACE;IACA;IAEA;IACA;;EAGF;AAAA;AAAA;IAGE;;EAGF;IACC;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;;EAGD;IACC;IACA;;EAGD;IACC;IACA;;;AAMD;EAEA;IACE;IACA;IACA;IACA;IACA;IACA;;EAGF;IACE;IACA;IACA;IACA;;EAGF;IACE;IAEA;IACA;IACA;;EAGF;IACE;IAEA;IACA;;EAGF;IACE;IACA;IACA;IACA;;EAGF;IACE;IACA;;EAMF;IACE;IAEA;IACA;IACA;IACA;IACA;IAEA;IACA;IACA;;EAGF;IACE;IAEA;IACA;IACA;;EAGF;IACE;;EAGF;IACE;IACA;IAEA;IACA;;EAGF;AAAA;AAAA;IAGE;IAEA;IACA;;EAGF;IACC;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;;EAGD;IACC;IACA;;EAGD;IACC;IACA%22,%22file%22:%22contact.css%22%7D */
+/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../stylesheet/scss/contact.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22;AAEA;EAEA;IACE;IACA;IACA;IACA;IACA;IACA;;EAGF;IACE;IACA;IACA;IACA;;EACA;IACE;IAEA;IACA;IACA;IACA;;EACA;IACE;IAEA;IACA;;EACA;IACE;IACA;IACA;IACA;;EAMR;IACE;IACA;;EAEE;IACE;IAEA;IACA;IACA;IACA;IACA;IAEA;IACA;IACA;;EACA;IACE;IACA;IAEA;IACA;IACA;;EACA;IACE;;EAGJ;IACE;IACA;IAEA;IACA;;EACA;IACE;;EAMN;IACE;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;;EACA;IACE;IACA;;EAEF;IACE;IACA;;;AASR;EAEA;IACE;IACA;IACA;IACA;IACA;IACA;;EAGF;IACE;IACA;IACA;IACA;;EACA;IACE;IAEA;IACA;IACA;;EACA;IACE;IAEA;IACA;;EACA;IACE;IACA;IACA;IACA;;EAMR;IACE;IACA;;EAEE;IACE;IAEA;IACA;IACA;IACA;IACA;IAEA;IACA;IACA;;EACA;IACE;IAEA;IACA;IACA;;EACA;IACE;;EAGJ;IACE;IACA;IAEA;IACA;;EACA;IACE;IAEA;IACA;;EAMN;IACE;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;;EACA;IACE;IACA;;EAEF;IACE;IACA%22,%22file%22:%22contact.css%22%7D */
