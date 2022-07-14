@@ -18,7 +18,7 @@
   [data-ruby]::before {
     content: attr(data-ruby);
     position: absolute;
-    top: -1em;
+    top: -1.6em;
     left: 0;
     right: 0;
     margin: auto;
@@ -59,7 +59,7 @@
   [data-ruby]::before {
     content: attr(data-ruby);
     position: absolute;
-    top: -1em;
+    top: -1.6em;
     left: 0;
     right: 0;
     margin: auto;
