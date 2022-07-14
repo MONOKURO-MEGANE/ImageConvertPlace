@@ -137,41 +137,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <article>
     <section>
       <h3 class="contact-title">プライバシーポリシー</h3>
-      <div class="attention-wrapper">
-        <ul class="attention-list">
-          <li class="attention-item">確認画面はございませんので、入力の間違いがないようにお願いします。</li>
-          <li class="attention-item">送信すると、入力されたメールアドレスにメールが送信されます。</li>
-          <li class="attention-item">すべての項目が必須項目となっています。</li>
-        </ul>
-      </div>
-      <div class="form-wrapper">
-        <form id="contact-form" action="contact.php" method="POST">
-          <input type="hidden" name="<?php echo $sess_name; ?>" value="<?php echo $sess_id; ?>">
-          <div class="input-block">
-            <ul class="contact-list">
-              <li class="contact-key"><label>お名前</label></li>
-              <li class="contact-value"><input type="text" name="name" size="20" maxlength="30" required></li>
-            </ul>
-            <ul class="contact-list">
-              <li class="contact-key"><label>メールアドレス</label></li>
-              <li class="contact-value"><input type="email" name="address" size="30" maxlength="50" required></li>
-            </ul>
-            <ul class="contact-list">
-              <li class="contact-key"><label>件名</label></li>
-              <li class="contact-value"><input type="text" name="subject" size="30" maxlength="50" required></li>
-            </ul>
-            <ul class="contact-list">
-              <li class="contact-key"><label>メッセージ</label></li>
-              <li class="contact-value"><textarea name="message" rows="6" cols="50" maxlength="400" required></textarea></li>
-            </ul>
-          </div>
-          <div style="text-align:center;">
-            <input id="send-button" type="submit" value="送信">
-            <input type="hidden" name="recaptcha_response" id="TOKEN">
-            <input type="hidden" name="action" value="POST_CONTACT">
-          </div>
-        </form>
-      </div>
     </section>
   </article>
   <footer>
