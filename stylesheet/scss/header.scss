@@ -22,7 +22,7 @@
   &::before {
     content: attr(data-ruby);
     position: absolute;
-    top: -1em;
+    top: -2em;
     left: 0;
     right: 0;
     margin: auto;
@@ -70,7 +70,7 @@ h2.site-title {
   &::before {
     content: attr(data-ruby);
     position: absolute;
-    top: -1em;
+    top: -2em;
     left: 0;
     right: 0;
     margin: auto;
