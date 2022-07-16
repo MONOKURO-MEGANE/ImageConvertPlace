@@ -13,6 +13,7 @@
   }
   .privacy-item {
     margin: 3% 10% 0.5%;
+    font-size: 1.4em;
   }
   .privacy-detail {
     margin: 0.5% 10%;
@@ -32,16 +33,18 @@
   }
   .head-text {
     margin: 3% 10%;
+    font-size: 1.2em;
   }
   .privacy-item {
-    margin: 3% 10% 0.5%;
+    margin: 5% 10% 1%;
+    font-size: 1.4em;
   }
   .privacy-detail {
-    margin: 0.5% 10%;
+    margin: 1% 10%;
   }
   ul.privacy-detail-list {
-    margin: 0.5% 10%;
+    margin: 1% 10%;
   }
 }
 
-/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../stylesheet/scss/privacy.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAEA;EAEA;IACE;IACA;IACA;IACA;IACA;IACA;;EAGF;IACE;IACA;;EAGF;IACE;;EAGF;IACE;;EAGF;IACE;;;AAMF;EAEA;IACE;IACA;IACA;IACA;IACA;IACA;;EAGF;IACE;;EAGF;IACE;;EAGF;IACE;;EAGF;IACE%22,%22file%22:%22privacy.css%22%7D */
+/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../stylesheet/scss/privacy.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAEA;EAEA;IACE;IACA;IACA;IACA;IACA;IACA;;EAGF;IACE;IACA;;EAGF;IACE;IACA;;EAGF;IACE;;EAGF;IACE;;;AAMF;EAEA;IACE;IACA;IACA;IACA;IACA;IACA;;EAGF;IACE;IACA;;EAGF;IACE;IACA;;EAGF;IACE;;EAGF;IACE%22,%22file%22:%22privacy.css%22%7D */
