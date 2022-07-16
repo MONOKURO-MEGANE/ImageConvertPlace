@@ -2,13 +2,60 @@
 
 @media all and ( min-width:768px ) {
 
+.privacy-title {
+  border-bottom: 2px solid #5aff3d;
+  margin: 0 5%;
+  line-height: 1.4;
+  text-align: center;
+  font-size: 2.2em;
+  font-weight: normal;
+}
 
+.head-text {
+  margin: 3% 10%;
+  font-size: 1.2em;
+}
+
+.privacy-item {
+  margin: 3% 10% .5%;
+}
+
+.privacy-detail {
+  margin: .5% 10%;
+}
+
+ul.privacy-detail-list {
+  margin: .5% 10%;
+}
 
 }
 
 
 @media all and ( max-width:767px ) {
 
+.privacy-title {
+  border-bottom: 2px solid #5aff3d;
+  margin: 0 5%;
+  line-height: 1.4;
+  text-align: center;
+  font-size: 2.2em;
+  font-weight: normal;
+}
 
+.head-text {
+  margin: 3% 10%;
+}
+
+.privacy-item {
+  margin: 3% 10% .5%;
+}
+
+.privacy-detail {
+  margin: .5% 10%;
+}
+
+ul.privacy-detail-list {
+  margin: .5% 10%;
+}
 
 }
