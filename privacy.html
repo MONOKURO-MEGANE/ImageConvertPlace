@@ -93,21 +93,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <link rel="stylesheet" href="css/privacy.css">
   <script src="https://kit.fontawesome.com/d48fe24770.js" crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <!-- google reCAPTCHAR -->
+  <!-- google RECAPTCHA -->
   <script src="javascript/recaptcha_keys.js"></script>
   <script>
     let key = getSitekey();
-    RECAPTHCA_SITEKEY = key;
-    RECAPTCHA_API_URL = 'https://www.google.com/recaptcha/api.js?render=' + key;
+    const RECAPTCHA_SITEKEY = key;
+    const RECAPTCHA_API_URL = `https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITEKEY}`;
 
     document.write(`<script src="${RECAPTCHA_API_URL}"><\/script>`);
-  </script>
-  <script>
+
     $(document).ready(function() {
       $('#contact-form').submit(function(event) {
         event.preventDefault();
         grecaptcha.ready(function() {
-          grecaptcha.execute(RECAPTHCA_SITEKEY, {action: 'POST_CONTACT'}).then(function(token) {
+          grecaptcha.execute(RECAPTCHA_SITEKEY, {action: 'POST_CONTACT'}).then(function(token) {
             //input 要素を生成して値にトークンを設定
             $('#contact-form').prepend('<input type="hidden" name="g-recaptcha-response" value="' + token + '">');
             //input 要素を生成して値にアクション名を設定
@@ -119,7 +118,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       });
     });
   </script>
-  <!-- /google reCAPTCHAR -->
+  <!-- /google RECAPTCHA -->
 </head>
 <body>
 
