@@ -1,11 +1,11 @@
 function getSitekey() {
-  SITEKEY = "";
+  let site_key = "";
   $.ajax({
     async: false,
     url: '../_recaptcha_keys.txt',
   })
   .done(function(data, textStatus, jqXHR) {
-    SITEKEY = data;
+    site_key = data;
   });
-  return SITEKEY;
+  return site_key;
 }

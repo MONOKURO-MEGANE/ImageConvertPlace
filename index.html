@@ -105,16 +105,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     document.write(`<script src="${RECAPTCHA_API_URL}"><\/script>`);
 
     $(document).ready(function() {
-      $('#file-upload-form').submit(function(event) {
+      $('#contact-form').submit(function(event) {
         event.preventDefault();
         grecaptcha.ready(function() {
-          grecaptcha.execute(RECAPTCHA_SITEKEY, {action: 'POST_IMAGE'}).then(function(token) {
+          grecaptcha.execute(RECAPTCHA_SITEKEY, {action: 'POST_CONTACT'}).then(function(token) {
             //input 要素を生成して値にトークンを設定
-            $('#file-upload-form').prepend('<input type="hidden" name="g-recaptcha-response" value="' + token + '">');
+            $('#contact-form').prepend('<input type="hidden" name="g-recaptcha-response" value="' + token + '">');
             //input 要素を生成して値にアクション名を設定
-            $('#file-upload-form').prepend('<input type="hidden" name="action" value="POST_IMAGE">');
+            $('#contact-form').prepend('<input type="hidden" name="action" value="POST_CONTACT">');
             //unbind で一度 submit のイベントハンドラを削除してから submit() を実行
-            $('#file-upload-form').unbind('submit').submit();
+            $('#contact-form').unbind('submit').submit();
           });
         });
       });
